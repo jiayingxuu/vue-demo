@@ -1,7 +1,8 @@
 <template>
   <div id="app">
     <mt-header fixed title="固定在顶部"></mt-header>
-    <router-view/>
+
+		  <router-view></router-view>
 
     <nav class="mui-bar mui-bar-tab">
 			<router-link class="mui-tab-item" to="/home">
@@ -33,16 +34,9 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 #app {
-  /* font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px; */
-	padding-top:40px;
-	padding-bottom: 44px;
-	background-color: #fff;
+  padding-top: 40px;
+  padding-bottom: 50px;
 }
 </style>

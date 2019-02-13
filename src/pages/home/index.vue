@@ -70,7 +70,7 @@ export default {
 };
 </script>
 
-<style lang="less">
+<style lang="less" >
 #home-container {
   .mint-swipe {
     height: 200px;
