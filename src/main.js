@@ -7,6 +7,15 @@ import router from './router'
 import vueResource from 'vue-resource'
 Vue.use(vueResource)
 
+//设置vue-resource根路径
+Vue.http.options.root = 'http://www.lovegf.cn:8899/api/'
+
+import moment from 'moment'
+//定义全局过滤器
+Vue.filter('dateformet',function(datastr,pattern='YYYY-MM-DD HH:mm:ss'){
+  return moment(datastr).format(pattern)
+})
+
 //导入mui
 import './libs/mui/css/mui.css'
 import './libs/mui/css/icons-extra.css'
@@ -19,6 +28,10 @@ import 'mint-ui/lib/style.css'
 Vue.use(MintUI)
 
 Vue.config.productionTip = false
+
+//全局注册组件
+import comment from './components/comment.vue'
+Vue.component('comment',comment)
 
 /* eslint-disable no-new */
 new Vue({
