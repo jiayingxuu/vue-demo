@@ -7,6 +7,10 @@ import router from './router'
 import vueResource from 'vue-resource'
 Vue.use(vueResource)
 
+// 图片预览插件
+import VuePreview from 'vue-pic-preview'
+Vue.use(VuePreview)
+
 //设置vue-resource根路径
 Vue.http.options.root = 'http://www.lovegf.cn:8899/api/'
 

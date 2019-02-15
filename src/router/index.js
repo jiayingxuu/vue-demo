@@ -10,6 +10,8 @@ import searchComponent from '../pages/search'
 import shopcarComponent from '../pages/shopcar'
 import newlistComponent from "../pages/newlist"
 import mewsinfoComponent from "../pages/newsinfo"
+import photolistComponent from "../pages/photolist"
+import photoinfoComponent from "../pages/photoinfo"
 
 export default new Router({
   routes: [
@@ -24,7 +26,9 @@ export default new Router({
     {path:'/shopcar',component:shopcarComponent},
     {path:'/search',component:searchComponent},
     {path:'/home/newlist',component:newlistComponent},
-    {path:'/home/newsinfo:id',component:mewsinfoComponent}
+    {path:'/home/newsinfo:id',component:mewsinfoComponent},
+    {path:'/home/photolist',component:photolistComponent},
+    {path:'/home/photoinfo:id',component:photoinfoComponent}
   ],
   linkActiveClass:'mui-active'
 })

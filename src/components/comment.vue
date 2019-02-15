@@ -2,8 +2,8 @@
     <div id="comment-container">
         <h3>发表评论</h3>
         <hr>
-        <textarea placeholder="请输入你要评论的内容(最多120字)" maxlength="120"></textarea>
-        <mt-button type="primary" size="large">发表评论</mt-button>
+        <textarea placeholder="请输入你要评论的内容(最多120字)" maxlength="120" v-model="content"></textarea>
+        <mt-button type="primary" size="large" @click="postComment">发表评论</mt-button>
         <div class="com-list">
             <div class="com-item" v-for="(item,index) in comments" :key="index">
                 <div class="com-title">
@@ -19,11 +19,13 @@
 </template>
 
 <script>
+import {Toast} from 'mint-ui' ;
 export default {
     data(){
         return {
             pageindex:1,    
-            comments:[]       
+            comments:[],
+            content:''      
         }
     },
     created(){
@@ -38,6 +40,20 @@ export default {
         getmore(){
             this.pageindex++;
             this.getcomments()
+        },
+        postComment(){
+            if(this.content.trim().length == 0 ){
+                return Toast('内容不能为空')
+            };
+            this.$http.post('postcomment/' + this.id , {content:this.content}).then(res =>{
+                Toast(res.body.message);
+            })
+            this.comments.unshift({
+                user_name:'匿名用户',
+                add_time:Date.now(),
+                content:this.content
+            })
+            this.content = ''
         }
     },
     props:['id']
