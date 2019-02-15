@@ -56,6 +56,9 @@ export default {
         img {
             width: 100%;
         }
+        strong {
+            font-weight: 700;
+        }
     }
 }
 </style>
