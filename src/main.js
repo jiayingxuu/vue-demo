@@ -33,9 +33,13 @@ Vue.use(MintUI)
 
 Vue.config.productionTip = false
 
-//全局注册组件
+//全局注册评论组件
 import comment from './components/comment.vue'
 Vue.component('comment',comment)
+
+//全局注册轮播图组件
+import swiper from './components/swiper.vue'
+Vue.component('swiper',swiper)
 
 /* eslint-disable no-new */
 new Vue({

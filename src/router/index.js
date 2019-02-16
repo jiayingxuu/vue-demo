@@ -12,6 +12,10 @@ import newlistComponent from "../pages/newlist"
 import mewsinfoComponent from "../pages/newsinfo"
 import photolistComponent from "../pages/photolist"
 import photoinfoComponent from "../pages/photoinfo"
+import goodslistComponent from "../pages/goodslist"
+import goodsinfoComponent from "../pages/goodsinfo"
+import goodsdescComponent from "../pages/goodsdesc"
+import goodscommentComponent from "../pages/goodscomment"
 
 export default new Router({
   routes: [
@@ -28,7 +32,11 @@ export default new Router({
     {path:'/home/newlist',component:newlistComponent},
     {path:'/home/newsinfo:id',component:mewsinfoComponent},
     {path:'/home/photolist',component:photolistComponent},
-    {path:'/home/photoinfo:id',component:photoinfoComponent}
+    {path:'/home/photoinfo:id',component:photoinfoComponent},
+    {path:'/home/goodslist',component:goodslistComponent},
+    {path:'/home/goodsinfo:id',component:goodsinfoComponent},
+    {path:'/home/goodsdesc:id',component:goodsdescComponent},
+    {path:'/home/goodscomment:id',component:goodscommentComponent},
   ],
   linkActiveClass:'mui-active'
 })

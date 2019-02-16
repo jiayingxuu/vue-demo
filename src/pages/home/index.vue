@@ -1,13 +1,9 @@
 <template>
   <div id="home-container">
     <!-- banner -->
-    <mt-swipe :auto="4000">
-      <mt-swipe-item v-for="(item,index) in banner" :key="index">
-        <a :href="item.url">
-          <img :src="item.img" alt>
-        </a>
-      </mt-swipe-item>
-    </mt-swipe>
+    
+    <swiper :banner="banner" :fullscreen="true"></swiper>
+
     <!-- 导航 -->
     <ul class="mui-table-view mui-grid-view mui-grid-9">
       <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
@@ -23,10 +19,10 @@
         </router-link>
       </li>
       <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
-        <a href="#">
+        <router-link to="/home/goodslist">
           <img src="../../assets/menu3.png" alt>
           <div class="mui-media-body">商品购买</div>
-        </a>
+        </router-link>
       </li>
       <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
         <a href="#">
@@ -72,13 +68,6 @@ export default {
 
 <style lang="less" >
 #home-container {
-  .mint-swipe {
-    height: 200px;
-    img {
-      width: 100%;
-      height: 100%;
-    }
-  }
   .mui-table-view {
       background-color: #fff;
       img {
