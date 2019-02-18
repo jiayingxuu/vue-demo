@@ -42,9 +42,44 @@ import swiper from './components/swiper.vue'
 Vue.component('swiper',swiper)
 
 /* eslint-disable no-new */
+
+//导入vuex
+import Vuex from 'vuex'
+Vue.use(Vuex)
+
+let car  = JSON.parse(localStorage.getItem('car') || '[]')
+const store = new Vuex.Store({
+  state:{
+    car,
+  },
+  mutations:{
+    addToCar(state,goodinfo){
+      let index = state.car.findIndex(item => item.id ==goodinfo.id)
+      if(index ==-1){
+        state.car.push(goodinfo)
+      }else{
+        state.car[index].count +=parseInt(goodinfo.count)
+      }
+      localStorage.setItem('car',JSON.stringify(state.car))
+    }
+  },
+  getters:{
+    totalcount(state){
+      let sum = 0;
+      state.car.forEach(item => {
+        sum +=item.count;
+      });
+      return sum
+    }
+  }
+})
+
+
+
 new Vue({
   el: '#app',
   router,
+  store,
   components: { App },
   template: '<App/>'
 })

@@ -97,6 +97,10 @@ export default {
     },
     addShopcar(){
       this.ballFall = !this.ballFall 
+      this.$store.commit('addToCar',{
+        id:this.id,
+        count:this.buyCount
+      })
     },
     beforeEnter(el){
       el.style.transform = 'translate(0,0)'
